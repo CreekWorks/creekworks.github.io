@@ -2,77 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Micah's Personal Webspace</title>
+    <title>My First Blog Post</title>
     <style>
-        /* Classic 90s color scheme and styling */
+        /* Keeping the same 90s Teal theme */
         body {
-            background-color: #008080; /* Classic Teal background */
+            background-color: #008080;
             color: #000000;
             font-family: "Times New Roman", Times, serif;
             margin: 20px;
         }
         .container {
-            width: 800px;
+            width: 760px;
             margin: 0 auto;
             background-color: #ffffff;
             border: 2px solid #000000;
             box-shadow: 5px 5px 0px #000000;
+            padding: 20px;
         }
         .header {
-            background-color: #000080; /* Navy blue header */
+            background-color: #000080;
             color: #ffffff;
             text-align: center;
-            padding: 20px;
+            padding: 15px;
             border-bottom: 2px solid #000000;
+            margin-bottom: 20px;
         }
         .header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 2em;
         }
-        .layout {
-            display: table;
-            width: 100%;
-        }
-        .sidebar {
-            display: table-cell;
-            width: 200px;
-            background-color: #c0c0c0; /* Light gray sidebar */
-            padding: 15px;
-            border-right: 2px solid #000000;
-            vertical-align: top;
-        }
-        .content {
-            display: table-cell;
-            padding: 20px;
-            vertical-align: top;
-        }
-        .nav-link {
-            display: block;
-            margin-bottom: 10px;
+        a {
             font-weight: bold;
-            text-decoration: none;
             color: #0000EE;
+            text-decoration: none;
         }
-        .nav-link:hover {
+        a:hover {
             color: #FF0000;
-        }
-        .widget {
-            border: 2px inset #ffffff;
-            padding: 8px;
-            margin-top: 20px;
-            background-color: #dfdfdf;
-            font-size: 0.9em;
-        }
-        marquee {
-            background-color: #ffff00;
-            padding: 5px;
-            border-bottom: 2px solid #000000;
-            font-weight: bold;
+            text-decoration: underline;
         }
         hr {
             border: 0;
             border-bottom: 1px dashed #888;
             margin: 20px 0;
+        }
+        .date {
+            font-style: italic;
+            color: #555;
+            font-size: 0.9em;
         }
     </style>
 </head>
@@ -80,63 +56,28 @@
 
 <div class="container">
     <div class="header">
-        <h1>Creekworks.net</h1>
-        <p><i>Welcome to Micah's corner of the web!</i></p>
+        <h1>My Journal</h1>
     </div>
     
-    <!-- The classic scrolling text bar -->
-    <marquee>Update: The Godot beach walking simulator dev commentary is now uploaded!</marquee>
+    <!-- This is the crucial link to get back to your main page -->
+    <a href="index.html">&lt;&lt; Back to Home</a>
+    
+    <hr>
 
-    <div class="layout">
-        <!-- LEFT SIDEBAR -->
-        <div class="sidebar">
-            <h3>Navigation</h3>
-            <a href="#home" class="nav-link">[ Home ]</a>
-            <a href="#about" class="nav-link">[ About Me ]</a>
-            <a href="#github" class="nav-link">[ GitHub Repo ]</a>
-            <a href="#guestbook" class="nav-link">[ Guestbook ]</a>
-            
-            <div class="widget">
-                <b>Currently Listening To:</b><br>
-                Electric Light Orchestra & Supertramp on vinyl
-            </div>
-            
-            <div class="widget">
-                <b>Currently Shooting:</b><br>
-                Canon AE-1 Program & Argus C3
-            </div>
+    <h2>My First Entry</h2>
+    <p class="date">August 15, 2026</p>
+    
+    <p>This is a dedicated page just for a longer update. Before modern blogging software existed, this is exactly how people shared their thoughts: by writing a fresh HTML file for every post.</p>
+    
+    <p>You can write as much as you want here without cluttering up your main homepage. You can even add images using the standard <code>&lt;img&gt;</code> tag. When you want to make a second post, you just copy this entire file, name it <code>second-post.html</code>, and change the text!</p>
+
+    <hr>
+    
+    <center>
+        <div style="font-size: 0.8em; color: #666;">
+            &copy; 2026 Creekworks.
         </div>
-
-        <!-- MAIN CONTENT AREA -->
-        <div class="content">
-            <h2>Welcome to my personal page!</h2>
-            <p>This is my little digital living room. I wanted a space away from the big corporate site builders to just host my own HTML, share what I'm working on, and keep things simple.</p>
-            
-            <hr>
-
-            <h2>Recent Updates</h2>
-            <ul>
-                <li><b>August 2026:</b> Finished up the dev commentary for the new walking simulator. Sharing it with friends for feedback now before tackling more GDScript.</li>
-                <li><b>August 2026:</b> Scored some awesome vintage records at the flea market this weekend. Fired up the 70s audio gear (you can't beat those tactile mechanical switches and wood finishes).</li>
-                <li><b>July 2026:</b> Messing around with CAD and 3D printing to try and slim down a smart tag for my wallet. Circuit modding is tricky but fun!</li>
-            </ul>
-
-            <hr>
-
-            <h2>About Me</h2>
-            <p>I'm a student and Senior Resident Advisor. In my free time, I like building things—whether that's programming video games, fixing up old cameras, or doing basic hardware modification. If you want to talk web design, game dev, or film photography, sign the guestbook!</p>
-            
-            <br><br><br>
-            
-            <!-- A placeholder for classic 88x31 web buttons -->
-            <center>
-                <div style="font-size: 0.8em; color: #666;">
-                    &copy; 2026 Creekworks. <br>
-                    <img src="https://via.placeholder.com/88x31/000000/00ff00?text=Valid+HTML" alt="Valid HTML Badge" style="margin-top: 10px;">
-                </div>
-            </center>
-        </div>
-    </div>
+    </center>
 </div>
 
 </body>
