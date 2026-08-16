@@ -2,82 +2,324 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My First Blog Post</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creekworks - Personal Webspace</title>
     <style>
-        /* Keeping the same 90s Teal theme */
+        /* =========================================================
+           GLOBAL THEME & STYLES (Customize your look and feel here)
+           ========================================================= */
         body {
-            background-color: #008080;
+            background-color: #008080; /* Background color (Default: Windows 95 Teal) */
             color: #000000;
-            font-family: "Times New Roman", Times, serif;
-            margin: 20px;
+            font-family: "Times New Roman", Times, Georgia, serif;
+            margin: 0;
+            padding: 20px;
         }
+
+        /* The central container holding the entire page */
         .container {
-            width: 760px;
+            max-width: 850px;
             margin: 0 auto;
             background-color: #ffffff;
             border: 2px solid #000000;
-            box-shadow: 5px 5px 0px #000000;
-            padding: 20px;
+            box-shadow: 6px 6px 0px #000000; /* Classic hard drop shadow */
         }
+
+        /* Top Header Banner */
         .header {
-            background-color: #000080;
+            background-color: #000080; /* Navy Blue */
             color: #ffffff;
             text-align: center;
-            padding: 15px;
+            padding: 20px 10px;
             border-bottom: 2px solid #000000;
-            margin-bottom: 20px;
         }
         .header h1 {
             margin: 0;
-            font-size: 2em;
+            font-size: 2.4rem;
+            letter-spacing: 1px;
         }
-        a {
+        .header p {
+            margin: 5px 0 0 0;
+            font-style: italic;
+            color: #d1d5db;
+        }
+
+        /* Scrolling Announcement Marquee */
+        marquee {
+            background-color: #ffff00; /* Bright yellow ticker */
+            color: #000000;
+            padding: 6px;
             font-weight: bold;
-            color: #0000EE;
-            text-decoration: none;
+            border-bottom: 2px solid #000000;
+            font-size: 0.95rem;
+        }
+
+        /* Two-Column Layout (Sidebar + Main Content) */
+        .layout-grid {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* Left Sidebar */
+        .sidebar {
+            flex: 1 1 220px;
+            background-color: #c0c0c0; /* Retro metallic gray */
+            padding: 15px;
+            border-right: 2px solid #000000;
+            box-sizing: border-box;
+        }
+
+        /* Right Content Area */
+        .content {
+            flex: 3 1 450px;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #ffffff;
+        }
+
+        /* Standard Links */
+        a {
+            color: #0000ee;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        a:visited {
+            color: #551a8b;
         }
         a:hover {
-            color: #FF0000;
-            text-decoration: underline;
+            color: #ff0000;
+        }
+
+        /* Navigation Buttons */
+        .nav-menu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0 0 15px 0;
+        }
+        .nav-menu li {
+            margin-bottom: 8px;
+        }
+        .nav-menu a {
+            display: block;
+            background-color: #e0e0e0;
+            border: 2px outset #ffffff;
+            padding: 5px 10px;
+            text-decoration: none;
+            color: #000000;
+            font-size: 0.95rem;
+        }
+        .nav-menu a:active {
+            border-style: inset;
+        }
+
+        /* Sidebar Box / Widget */
+        .widget-box {
+            background-color: #dfdfdf;
+            border: 2px inset #ffffff;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 0.88rem;
+        }
+        .widget-title {
+            font-weight: bold;
+            border-bottom: 1px solid #999;
+            margin-bottom: 5px;
+            padding-bottom: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Content Headings & Separators */
+        h2 {
+            font-size: 1.3rem;
+            color: #000080;
+            border-bottom: 2px solid #000080;
+            padding-bottom: 4px;
+            margin-top: 20px;
+            margin-bottom: 10px;
         }
         hr {
             border: 0;
-            border-bottom: 1px dashed #888;
-            margin: 20px 0;
+            border-top: 1px dashed #888888;
+            margin: 25px 0;
         }
-        .date {
-            font-style: italic;
-            color: #555;
-            font-size: 0.9em;
+
+        /* Project / Demo Card Box */
+        .project-card {
+            border: 1px solid #333333;
+            background-color: #f9f9f9;
+            padding: 12px;
+            margin-bottom: 15px;
+        }
+        .project-card h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.05rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #e0e0e0;
+            border-top: 2px solid #000000;
+            padding: 15px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+        .badge-bar img {
+            margin: 3px;
+            vertical-align: middle;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="header">
-        <h1>My Journal</h1>
+
+    <!-- =========================================================
+         1. SITE HEADER (Edit title and subtitle here)
+         ========================================================= -->
+    <header class="header">
+        <h1>Creekworks</h1>
+        <p>A personal corner of the web for builds, logs, and experiments.</p>
+    </header>
+
+    <!-- =========================================================
+         2. SCROLLING MARQUEE (Update your latest mini-news here)
+         ========================================================= -->
+    <marquee scrollamount="5" onmouseover="this.stop();" onmouseout="this.start();">
+        *** Latest Update: Just deployed the new static HTML build on GitHub Pages! *** Check out the journal for new entries! ***
+    </marquee>
+
+    <div class="layout-grid">
+
+        <!-- =====================================================
+             3. SIDEBAR (Navigation & Status Widgets)
+             ===================================================== -->
+        <aside class="sidebar">
+            <!-- Navigation Menu -->
+            <div class="widget-title">Directory</div>
+            <ul class="nav-menu">
+                <li><a href="#about">&raquo; About Me</a></li>
+                <li><a href="#journal">&raquo; Journal / Logs</a></li>
+                <li><a href="#projects">&raquo; Projects</a></li>
+                <li><a href="#bookmarks">&raquo; Cool Links</a></li>
+                <li><a href="mailto:contact@creekworks.net">&raquo; Webmaster Mail</a></li>
+            </ul>
+
+            <!-- Status Widget 1: Currently Playing / Listening -->
+            <div class="widget-box">
+                <div class="widget-title">Now Playing 🎵</div>
+                <b>Artist:</b> Electric Light Orchestra<br>
+                <b>Format:</b> Vinyl Record
+            </div>
+
+            <!-- Status Widget 2: Gear / Tools -->
+            <div class="widget-box">
+                <div class="widget-title">Current Setup ⚙️</div>
+                <b>Primary Rig:</b> Custom Desktop<br>
+                <b>Camera:</b> 35mm SLR<br>
+                <b>Host:</b> GitHub Pages
+            </div>
+
+            <!-- Status Widget 3: Quick Status -->
+            <div class="widget-box">
+                <div class="widget-title">Current Status 📡</div>
+                Working on game mechanics, tweaking shaders, and keeping it simple.
+            </div>
+
+            <!-- Fun 90s Visitor Counter Placeholder -->
+            <div class="widget-box" style="text-align: center;">
+                <div class="widget-title">Visitor Count</div>
+                <code style="background: #000; color: #00ff00; padding: 2px 6px; font-weight: bold;">001428</code>
+            </div>
+        </aside>
+
+        <!-- =====================================================
+             4. MAIN CONTENT AREA
+             ===================================================== -->
+        <main class="content">
+
+            <!-- Intro Section -->
+            <section id="about">
+                <h2>Welcome to My Site</h2>
+                <p>
+                    Welcome! After relying on automated site builders and social feeds, I decided to return to a self-hosted, lightweight personal website. Everything here is hand-written HTML and CSS.
+                </p>
+                <p>
+                    Feel free to look through my recent project logs, read through journal entries, or check out my favorite corners of the web below.
+                </p>
+            </section>
+
+            <hr>
+
+            <!-- Journal / Mini-Blog Section -->
+            <section id="journal">
+                <h2>Journal & Logs</h2>
+                <p><i>Longer thoughts and build logs:</i></p>
+                <ul>
+                    <!-- To add a new post: duplicate first-post.html and link it here -->
+                    <li>
+                        <b>Aug 15, 2026:</b> <a href="first-post.html">Moving to GitHub Pages & Classic HTML</a>
+                    </li>
+                    <li>
+                        <b>Aug 02, 2026:</b> <a href="#journal">Fixing Up 70s Audio Equipment and Vintage Dials</a> (Draft)
+                    </li>
+                </ul>
+            </section>
+
+            <hr>
+
+            <!-- Projects Showcase Section -->
+            <section id="projects">
+                <h2>Featured Projects</h2>
+
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <h3>🎮 Game Development Experiments</h3>
+                    <p>
+                        Building indie mechanics in Godot—working through collision systems, interactive dialogue scripts, and dynamic atmosphere for walking simulations.
+                    </p>
+                    <small><b>Tech:</b> Godot Engine / GDScript</small>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <h3>🛠️ Hardware & CAD Modifications</h3>
+                    <p>
+                        Designing slim custom enclosures for hardware tags using 3D modeling and light circuit modification to fit low-profile form factors.
+                    </p>
+                    <small><b>Tools:</b> CAD / 3D Printing</small>
+                </div>
+            </section>
+
+            <hr>
+
+            <!-- Links & Bookmarks -->
+            <section id="bookmarks">
+                <h2>Recommended Links</h2>
+                <p>A few cool sites and resources worth bookmarking:</p>
+                <ul>
+                    <li><a href="https://neocities.org" target="_blank">Neocities</a> - A great community reviving hand-crafted personal web design.</li>
+                    <li><a href="https://w3schools.com" target="_blank">W3Schools HTML Guide</a> - Handy reference for tags, tables, and styles.</li>
+                </ul>
+            </section>
+
+        </main>
     </div>
-    
-    <!-- This is the crucial link to get back to your main page -->
-    <a href="index.html">&lt;&lt; Back to Home</a>
-    
-    <hr>
 
-    <h2>My First Entry</h2>
-    <p class="date">August 15, 2026</p>
-    
-    <p>This is a dedicated page just for a longer update. Before modern blogging software existed, this is exactly how people shared their thoughts: by writing a fresh HTML file for every post.</p>
-    
-    <p>You can write as much as you want here without cluttering up your main homepage. You can even add images using the standard <code>&lt;img&gt;</code> tag. When you want to make a second post, you just copy this entire file, name it <code>second-post.html</code>, and change the text!</p>
-
-    <hr>
-    
-    <center>
-        <div style="font-size: 0.8em; color: #666;">
-            &copy; 2026 Creekworks.
+    <!-- =========================================================
+         5. FOOTER & 88x31 BADGES
+         ========================================================= -->
+    <footer>
+        <div class="badge-bar">
+            <!-- Classic 88x31 web badges -->
+            <img src="https://via.placeholder.com/88x31/000080/ffffff?text=HTML+Only" alt="HTML Only Badge">
+            <img src="https://via.placeholder.com/88x31/000000/00ff00?text=Notepad" alt="Made in Notepad">
+            <img src="https://via.placeholder.com/88x31/333333/ffff00?text=800x600" alt="Best at 800x600">
         </div>
-    </center>
+        <p style="margin-top: 10px; color: #555;">
+            &copy; 2026 Creekworks &bull; Hosted on GitHub Pages &bull; Hand-coded with HTML & CSS
+        </p>
+    </footer>
+
 </div>
 
 </body>
